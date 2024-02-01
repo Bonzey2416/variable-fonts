@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap 5 Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid p-5 bg-light text-dark">
+      <h1>Variable fonts</h1>
+      <p>Here is a list of variable fonts.</p>
+      <p class="text-danger">
+        Warning! This site is under development! Mot all features work as
+        expected.
+      </p>
+    </div>
+    <div class="d-flex align-items-center">
+      <div class="p-2">Font&nbsp;size</div>
+      <div class="p-2">24px</div>
+      <input
+        type="range"
+        class="form-range p-2"
+        id="fontSize"
+        min="4"
+        max="280"
+        value="24"
+      />
+    </div>
+  </body>
+</html>
