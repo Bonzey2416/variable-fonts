@@ -3,7 +3,24 @@
   src: url(GoogleSansFlex.ttf);
   font-weight: 1 1000;
   font-stretch: 25% 151%;
+  font-style: oblique 0deg 10deg;
 }
+
+@font-face {
+  font-family: "Roboto Flex";
+  src: url(RobotoFlex.ttf);
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+  font-style: oblique 0deg 10deg;
+}
+
+@font-face {
+  font-family: "SF Pro Variable";
+  src: url(SFProVariable.woff2);
+  font-weight: 1 1000;
+  font-stretch: 30% 150%;
+}
+
 :root {
   --bs-font-sans-serif: "Google Sans Flex", Roboto, "Helvetica Neue", Helvetica,
     Arial, sans-serif;
