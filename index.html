@@ -10,6 +10,7 @@
     />
     <link href="style.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="script.js" defer></script>
   </head>
   <body>
     <div class="container-fluid p-5 bg-light text-dark">
@@ -20,17 +21,20 @@
         expected.
       </p>
     </div>
-    <div class="d-flex align-items-center">
-      <div class="p-2">Font&nbsp;size</div>
-      <div class="p-2">24px</div>
-      <input
-        type="range"
-        class="form-range p-2"
-        id="fontSize"
-        min="4"
-        max="280"
-        value="24"
-      />
+    <div class="container-fluid">
+        <div class="d-flex align-items-center">
+            <div class="p-2">Font&nbsp;size</div>
+           <input type="range" class="form-range p-2" id="fontSize" min="4" max="280" value="24" />
+      <div class="p-2"><span id="fontSizePreview"></span>px</div>
+    </div>
+    <h2>Fonts</h2>
+    <div class="row">
+      <div class="col-sm-6 border">
+        Google Sans Flex
+      </div>
+      <div class="col-sm-6 border">
+        Google Sans Flex
+      </div>
     </div>
   </body>
 </html>
