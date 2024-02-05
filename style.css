@@ -24,4 +24,35 @@
 :root {
   --bs-font-sans-serif: "Google Sans Flex", Roboto, "Helvetica Neue", Helvetica,
     Arial, sans-serif;
+  --font-preview-size: 24px;
+}
+
+.text-area-preview {
+  font-size: var(--font-preview-size);
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block !important;
+}
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block !important;
+  left: 50%;
+  margin-top: -28px;
+}
+
+.dropdown-item {
+  font-size: small; /* 13px */
+}
+.dropdown-toggle::after {
+  font-size: var(--font-md);
+  margin-bottom: -2px;
+}
+.dropdown-menu li a.active {
+  color: #fff;
+}
+
+.custom-toggle-arrow {
+  font-size: 18px;
+  margin-top: 1px;
+  line-height: 12px;
 }
