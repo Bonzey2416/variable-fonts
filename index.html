@@ -10,7 +10,7 @@
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="style.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
     <script type="text/javascript" src="script.js" defer></script>
   </head>
   <body>
@@ -34,19 +34,37 @@
         <div class="my-2 p-3 rounded-2 border">
           <div class="float-start fs-5">Google Sans Flex</div>
           <div class="float-end fs-6 text-muted">5 axis</div>
-          <div class="dropdown float-end">
-            <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
-              <i class="bi bi-gear-fill"></i>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Weight</a></li>
-              <li><a class="dropdown-item" href="#">Width</a></li>
-              <li><a class="dropdown-item" href="#">Optical size</a></li>
-              <li><a class="dropdown-item" href="#">Roundness</a></li>
-              <li><a class="dropdown-item" href="#">Slant</a></li>
-            </ul>
-          </div>
-          <textarea class="form-control border-0 m-0 p-0 pt-2 text-area-preview" style="font-family: 'Google Sans Flex'; height: 240px;" id="textPreview1" name="text">The quick brown fox jumps over the lazy dog. 1234567890
+          <nav class="nav justify-content-center" aria-label="Secondary navigation">      
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-gear-fill"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item" href="#">Weight<span
+                      class="float-end custom-toggle-arrow">&#187</span></a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" onclick="fontWeightChange(googlesansflex, 100)" style="font-weight: 100; font-family: 'Google Sans Flex';">Thin 100</a></li>
+                    <li><a class="dropdown-item" onclick="fontWeightChange(googlesansflex, 200)" style="font-weight: 200; font-family: 'Google Sans Flex';">Extralight 200</a></li>
+                    <li><a class="dropdown-item" onclick="fontWeightChange(googlesansflex, 300)" style="font-weight: 300; font-family: 'Google Sans Flex';">Light 300</a></li>
+                    <li><a class="dropdown-item" onclick="fontWeightChange(googlesansflex, 400)" style="font-weight: 400; font-family: 'Google Sans Flex';">Regular 400</a></li>
+                    <li><a class="dropdown-item" onclick="fontWeightChange(googlesansflex, 500)" style="font-weight: 500; font-family: 'Google Sans Flex';">Medium 500</a></li>
+                    <li><a class="dropdown-item" onclick="fontWeightChange(googlesansflex, 600)" style="font-weight: 600; font-family: 'Google Sans Flex';">Semibold 600</a></li>
+                    <li><a class="dropdown-item" onclick="fontWeightChange(googlesansflex, 700)" style="font-weight: 700; font-family: 'Google Sans Flex';">Bold 700</a></li>
+                    <li><a class="dropdown-item" onclick="fontWeightChange(googlesansflex, 800)" style="font-weight: 800; font-family: 'Google Sans Flex';">Extrabold 800</a></li>
+                    <li><a class="dropdown-item" onclick="fontWeightChange(googlesansflex, 900)" style="font-weight: 900; font-family: 'Google Sans Flex';">Black 900</a></li>
+                    <li><hr class="dropdown-divider"></hr></li>
+                    <li><a class="dropdown-item">
+                      <p>Custom (1 to 1000)</p>
+                      <input type="range" class="form-range p-2" id="GoogleSansFlexWeightSlider" min="1" max="1000" value="400" />
+                      <p>Currently <span id="GoogleSansFlexWeight"></span></p>
+                    </a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </nav>
+          <textarea class="form-control border-0 m-0 p-0 pt-2 text-area-preview" id="GoogleSansFlex" style="font-family: 'Google Sans Flex'; height: 240px;" id="textPreview1" name="text">The quick brown fox jumps over the lazy dog. 1234567890
           </textarea>
         </div>
       </div>
@@ -54,24 +72,37 @@
         <div class="my-2 p-3 rounded-2 border">
           <div class="float-start fs-5">Roboto Flex</div>
           <div class="float-end fs-6 text-muted">13 axis</div>
-          <ul class="dropdown-menu">
-            <li>
-              <!-- Default dropend button -->
-              <div class="btn-group dropend">
-                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  Weight
-                </button>
-                <ul class="dropdown-menu">
-                  <!-- Dropdown menu links -->
-                </ul>
-              </div>
+          <nav class="nav justify-content-center" aria-label="Secondary navigation">      
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-gear-fill"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item" href="#">Weight<span
+                      class="float-end custom-toggle-arrow">&#187</span></a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" onclick="fontWeightChange(robotoflex, 100)" style="font-weight: 100; font-family: 'Roboto Flex'">Thin 100</a></li>
+                    <li><a class="dropdown-item" onclick="fontWeightChange(robotoflex, 200)" style="font-weight: 200; font-family: 'Roboto Flex'">Extralight 200</a></li>
+                    <li><a class="dropdown-item" onclick="fontWeightChange(robotoflex, 300)" style="font-weight: 300; font-family: 'Roboto Flex'">Light 300</a></li>
+                    <li><a class="dropdown-item" onclick="fontWeightChange(robotoflex, 400)" style="font-weight: 400; font-family: 'Roboto Flex'">Regular 400</a></li>
+                    <li><a class="dropdown-item" onclick="fontWeightChange(robotoflex, 500)" style="font-weight: 500; font-family: 'Roboto Flex'">Medium 500</a></li>
+                    <li><a class="dropdown-item" onclick="fontWeightChange(robotoflex, 600)" style="font-weight: 600; font-family: 'Roboto Flex'">Semibold 600</a></li>
+                    <li><a class="dropdown-item" onclick="fontWeightChange(robotoflex, 700)" style="font-weight: 700; font-family: 'Roboto Flex'">Bold 700</a></li>
+                    <li><a class="dropdown-item" onclick="fontWeightChange(robotoflex, 800)" style="font-weight: 800; font-family: 'Roboto Flex'">Extrabold 800</a></li>
+                    <li><a class="dropdown-item" onclick="fontWeightChange(robotoflex, 900)" style="font-weight: 900; font-family: 'Roboto Flex'">Black 900</a></li>
+                    <li><hr class="dropdown-divider"></hr></li>
+                    <li><a class="dropdown-item">
+                      <p>Custom (1 to 1000)</p>
+                      <input type="range" class="form-range p-2" id="RobotoFlexWeightSlider" min="1" max="1000" value="400" />
+                      <p>Currently <span id="RobotoFlexWeight"></span></p>
+                    </a></li>
+                  </ul>
+                </li>
+              </ul>
             </li>
-            <li><a class="dropdown-item" href="#">Width</a></li>
-            <li><a class="dropdown-item" href="#">Optical size</a></li>
-            <li><a class="dropdown-item" href="#">Roundness</a></li>
-            <li><a class="dropdown-item" href="#">Slant</a></li>
-          </ul>
-          <textarea class="form-control border-0 m-0 p-0 pt-2 text-area-preview" style="font-family: 'Roboto Flex'; height: 240px;" id="textPreview2" name="text">The quick brown fox jumps over the lazy dog. 1234567890
+          </nav>
+          <textarea class="form-control border-0 m-0 p-0 pt-2 text-area-preview" id="RobotoFlex" style="font-family: 'Roboto Flex'; height: 240px;" id="textPreview2" name="text">The quick brown fox jumps over the lazy dog. 1234567890
           </textarea>
         </div>
       </div>
@@ -79,7 +110,7 @@
         <div class="my-2 p-3 rounded-2 border">
           <div class="float-start fs-5">SF Pro Variable</div>
           <div class="float-end fs-6 text-muted">4 axis</div>
-          <textarea class="form-control border-0 m-0 p-0 pt-2 text-area-preview" style="font-family: 'SF Pro Variable'; height: 240px;" id="textPreview3" name="text">The quick brown fox jumps over the lazy dog. 1234567890
+          <textarea class="form-control border-0 m-0 p-0 pt-2 text-area-preview" id="SFProVariable" style="font-family: 'SF Pro Variable'; height: 240px;" id="textPreview3" name="text">The quick brown fox jumps over the lazy dog. 1234567890
           </textarea>
         </div>
       </div>
