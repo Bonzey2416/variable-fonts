@@ -19,6 +19,7 @@
   src: url(SFProVariable.woff2);
   font-weight: 1 1000;
   font-stretch: 30% 150%;
+  font-style: normal;
 }
 
 :root {
