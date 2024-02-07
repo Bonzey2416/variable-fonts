@@ -22,6 +22,30 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Myriad Variable Concept";
+  src: url(MyriadVariableConcept.woff2);
+  font-weight: 300 900;
+  font-stretch: 70% 110%;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Myriad Variable Concept";
+  src: url(MyriadVariableConceptItalic.woff2);
+  font-weight: 300 900;
+  font-stretch: 70% 110%;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Acumin Variable Concept";
+  src: url(AcuminVariableConcept.woff2);
+  font-weight: 100 900;
+  font-stretch: 50% 115%;
+  font-style: oblique -12deg 0deg;
+}
+
 :root {
   --bs-font-sans-serif: "Google Sans Flex", Roboto, "Helvetica Neue", Helvetica,
     Arial, sans-serif;
