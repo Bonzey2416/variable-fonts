@@ -8,6 +8,7 @@ var gsfwi = document.getElementById("GoogleSansFlexWidth");
 var gsfwislider = document.getElementById("GoogleSansFlexWidthSlider");
 var gsfs = document.getElementById("GoogleSansFlexSlant");
 var gsfsslider = document.getElementById("GoogleSansFlexSlantSlider");
+var gsfsvalue = 0;
 var rf = document.getElementById("RobotoFlex");
 var rfw = document.getElementById("RobotoFlexWeight");
 var rfwslider = document.getElementById("RobotoFlexWeightSlider");
@@ -15,6 +16,7 @@ var rfwi = document.getElementById("RobotoFlexWidth");
 var rfwislider = document.getElementById("RobotoFlexWidthSlider");
 var rfs = document.getElementById("RobotoFlexSlant");
 var rfsslider = document.getElementById("RobotoFlexSlantSlider");
+var rfsvalue = 0;
 var sfpv = document.getElementById("SFProVariable");
 var sfpvw = document.getElementById("SFProVariableWeight");
 var sfpvwslider = document.getElementById("SFProVariableWeightSlider");
@@ -32,6 +34,7 @@ var avcwi = document.getElementById("AcuminVariableConceptWidth");
 var avcwislider = document.getElementById("AcuminVariableConceptWidthSlider");
 var avcs = document.getElementById("AcuminVariableConceptSlant");
 var avcsslider = document.getElementById("AcuminVariableConceptSlantSlider");
+var avcsvalue = 0;
 
 output.innerHTML = slider.value;
 gsfw.innerHTML = gsfwslider.value;
@@ -53,25 +56,91 @@ slider.oninput = function () {
   root.style.setProperty("--font-preview-size", this.value + "px");
 };
 
-function fontWeightChange(element, fontweight) {
-  element.style.fontWeight = fontweight;
-  elementw.innerHTML = this.value;
-}
-
-function fontWidthChange(element, fontwidth) {
-  element.style.fontStretch = fontwidth + "%";
-  elementwi.innerHTML = this.value;
-}
-
-function fontSlantChange(element, fontslant) {
-  element.style.fontStyle = "oblique " + fontslant + "deg";
-  elements.innerHTML = this.value;
-}
-
 function fontSizeChange(number) {
   output.innerHTML = number;
   slider.value = number;
   root.style.setProperty("--font-preview-size", number + "px");
+}
+
+function GoogleSansFlexWeightChange(number) {
+  gsfw.innerHTML = number;
+  gsfwslider.value = number;
+  gsf.style.fontWeight = number;
+}
+
+function GoogleSansFlexWidthChange(number) {
+  gsfwi.innerHTML = number;
+  gsfwislider.value = number;
+  gsf.style.fontStretch = number + "%";
+}
+
+function GoogleSansFlexSlantChange(number) {
+  var gsfsvalue = number;
+  gsfs.innerHTML = gsfsvalue;
+  gsfsslider.value = gsfsvalue;
+  gsf.style.fontVariationSettings = "'slnt' " + gsfsvalue;
+}
+
+function RobotoFlexWeightChange(number) {
+  rfw.innerHTML = number;
+  rfwslider.value = number;
+  rf.style.fontWeight = number;
+}
+
+function RobotoFlexWidthChange(number) {
+  rfwi.innerHTML = number;
+  rfwislider.value = number;
+  rf.style.fontStretch = number + "%";
+}
+
+function RobotoFlexSlantChange(number) {
+  var rfsvalue = number;
+  rfs.innerHTML = rfsvalue;
+  rfsslider.value = rfsvalue;
+  rf.style.fontVariationSettings = "'slnt' " + rfsvalue;
+}
+
+function SFProVariableWeightChange(number) {
+  sfpvw.innerHTML = number;
+  sfpvwslider.value = number;
+  sfpv.style.fontWeight = number;
+}
+
+function SFProVariableWidthChange(number) {
+  sfpvwi.innerHTML = number;
+  sfpvwislider.value = number;
+  sfpv.style.fontStretch = number + "%";
+}
+
+function MyriadVariableConceptWeightChange(number) {
+  mvcw.innerHTML = number;
+  mvcwslider.value = number;
+  mvc.style.fontWeight = number;
+}
+
+function MyriadVariableConceptWidthChange(number) {
+  mvcwi.innerHTML = number;
+  mvcwislider.value = number;
+  mvc.style.fontStretch = number + "%";
+}
+
+function AcuminVariableConceptWeightChange(number) {
+  avcw.innerHTML = number;
+  avcwslider.value = number;
+  avc.style.fontWeight = number;
+}
+
+function AcuminVariableConceptWidthChange(number) {
+  avcwi.innerHTML = number;
+  avcwislider.value = number;
+  avc.style.fontStretch = number + "%";
+}
+
+function AcuminVariableConceptSlantChange(number) {
+  var avcsvalue = number;
+  avcs.innerHTML = avcsvalue;
+  avcsslider.value = avcsvalue;
+  avc.style.fontVariationSettings = "'slnt' " + avcsvalue * -1;
 }
 
 gsfwslider.oninput = function () {
@@ -85,8 +154,9 @@ gsfwislider.oninput = function () {
 };
 
 gsfsslider.oninput = function () {
-  gsfs.innerHTML = this.value;
-  gsf.style.fontStyle = "oblique " + this.value * -1 + "deg";
+  var gsfsvalue = this.value;
+  gsfs.innerHTML = gsfsvalue;
+  gsf.style.fontVariationSettings = "'slnt' " + gsfsvalue;
 };
 
 rfwslider.oninput = function () {
@@ -100,8 +170,9 @@ rfwislider.oninput = function () {
 };
 
 rfsslider.oninput = function () {
+  var rfsvalue = this.value;
   rfs.innerHTML = this.value;
-  rf.style.fontStyle = "oblique " + this.value * -1 + "deg";
+  rf.style.fontVariationSettings = "'slnt' " + rfsvalue;
 };
 
 sfpvwslider.oninput = function () {
@@ -135,6 +206,7 @@ avcwislider.oninput = function () {
 };
 
 avcsslider.oninput = function () {
-  avcs.innerHTML = this.value;
-  avc.style.fontStyle = "oblique " + this.value + "deg";
+  var avcsvalue = this.value;
+  avcs.innerHTML = avcsvalue;
+  avc.style.fontVariationSettings = "'slnt' " + avcsvalue * -1;
 };
