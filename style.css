@@ -23,6 +23,13 @@
 }
 
 @font-face {
+  font-family: "SF Pro Rounded Variable";
+  src: url(SFProRoundedVariable.woff2);
+  font-weight: 1 1000;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Myriad Variable Concept";
   src: url(MyriadVariableConcept.woff2);
   font-weight: 300 900;
