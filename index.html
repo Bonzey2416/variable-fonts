@@ -127,7 +127,7 @@
                     <li><hr class="dropdown-divider"></hr></li>
                     <li><a class="dropdown-item">
                       <p>Custom (6 to 144)</p>
-                      <input type="range" class="form-range p-2" id="GoogleSansFlexOpticalSlider" min="6" max="144" value="24" />
+                      <input type="range" class="form-range p-2" id="GoogleSansFlexOpticalSlider" min="6" max="144" value="24" disabled/>
                       <p>Currently <span id="GoogleSansFlexOptical"></span></p>
                     </a></li>
                   </ul>
@@ -205,6 +205,24 @@
                     </a></li>
                   </ul>
                 </li>
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item" href="#">Optical size<span
+                      class="float-end custom-toggle-arrow">&#187</span></a>
+                  <ul class="dropdown-menu">
+                    <a class="dropdown-item">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="RobotoFlexOpticalCheck" onclick="RobotoFlexOpticalCheckbox()" checked>
+                        <label class="form-check-label">Adjust optical size<br>based on font size</label>
+                      </div>
+                    </a>
+                    <li><hr class="dropdown-divider"></hr></li>
+                    <li><a class="dropdown-item">
+                      <p>Custom (6 to 144)</p>
+                      <input type="range" class="form-range p-2" id="RobotoFlexOpticalSlider" min="6" max="144" value="24" disabled/>
+                      <p>Currently <span id="RobotoFlexOptical"></span></p>
+                    </a></li>
+                  </ul>
+                </li>
               </ul>
             </li>
           </nav>
@@ -260,6 +278,24 @@
                       <p>Custom (30 to 150)</p>
                       <input type="range" class="form-range p-2" id="SFProVariableWidthSlider" min="30" max="150" value="100" />
                       <p>Currently <span id="SFProVariableWidth"></span></p>
+                    </a></li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item" href="#">Optical size<span
+                      class="float-end custom-toggle-arrow">&#187</span></a>
+                  <ul class="dropdown-menu">
+                    <a class="dropdown-item">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="SFProVariableOpticalCheck" onclick="SFProVariableOpticalCheckbox()" checked>
+                        <label class="form-check-label">Adjust optical size<br>based on font size</label>
+                      </div>
+                    </a>
+                    <li><hr class="dropdown-divider"></hr></li>
+                    <li><a class="dropdown-item">
+                      <p>Custom (17 to 96)</p>
+                      <input type="range" class="form-range p-2" id="SFProVariableOpticalSlider" min="17" max="96" value="24" disabled/>
+                      <p>Currently <span id="SFProVariableOptical"></span></p>
                     </a></li>
                   </ul>
                 </li>
