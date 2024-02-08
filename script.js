@@ -35,6 +35,9 @@ var sfpvo = document.getElementById("SFProVariableOptical");
 var sfpvocheck = document.getElementById("SFProVariableOpticalCheck");
 var sfpvoslider = document.getElementById("SFProVariableOpticalSlider");
 var sfpvovalue = sizevalue;
+var sfprv = document.getElementById("SFProRoundedVariable");
+var sfprvw = document.getElementById("SFProRoundedVariableWeight");
+var sfprvwslider = document.getElementById("SFProRoundedVariableWeightSlider");
 var mvc = document.getElementById("MyriadVariableConcept");
 var mvcw = document.getElementById("MyriadVariableConceptWeight");
 var mvcwslider = document.getElementById("MyriadVariableConceptWeightSlider");
@@ -61,6 +64,7 @@ rfo.innerHTML = rfoslider.value;
 sfpvw.innerHTML = sfpvwslider.value;
 sfpvwi.innerHTML = sfpvwislider.value;
 sfpvo.innerHTML = sfpvoslider.value;
+sfprvw.innerHTML = sfprvwslider.value;
 mvcw.innerHTML = mvcwslider.value;
 mvcwi.innerHTML = mvcwislider.value;
 avcw.innerHTML = avcwslider.value;
@@ -210,6 +214,12 @@ function SFProVariableOpticalCheckbox() {
   sfpv.style.fontVariationSettings = "'opsz' " + sfpvovalue;
 }
 
+function SFProRoundedVariableWeightChange(number) {
+  sfprvw.innerHTML = number;
+  sfprvwslider.value = number;
+  sfprv.style.fontWeight = number;
+}
+
 function MyriadVariableConceptWeightChange(number) {
   mvcw.innerHTML = number;
   mvcwslider.value = number;
@@ -303,6 +313,11 @@ sfpvoslider.oninput = function () {
   var sfpvovalue = this.value;
   sfpvo.innerHTML = sfpvovalue;
   sfpv.style.fontVariationSettings = "'opsz' " + sfpvovalue;
+};
+
+sfprvwslider.oninput = function () {
+  sfprvw.innerHTML = this.value;
+  sfprv.style.fontWeight = this.value;
 };
 
 mvcwslider.oninput = function () {
