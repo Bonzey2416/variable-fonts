@@ -1,5 +1,6 @@
 var slider = document.getElementById("fontSize");
 var output = document.getElementById("fontSizePreview");
+var sizevalue = 24;
 var root = document.querySelector(":root");
 var gsf = document.getElementById("GoogleSansFlex");
 var gsfw = document.getElementById("GoogleSansFlexWeight");
@@ -9,6 +10,10 @@ var gsfwislider = document.getElementById("GoogleSansFlexWidthSlider");
 var gsfs = document.getElementById("GoogleSansFlexSlant");
 var gsfsslider = document.getElementById("GoogleSansFlexSlantSlider");
 var gsfsvalue = 0;
+var gsfo = document.getElementById("GoogleSansFlexOptical");
+var gsfocheck = document.getElementById("GoogleSansFlexOpticalCheck");
+var gsfoslider = document.getElementById("GoogleSansFlexOpticalSlider");
+var gsfovalue = sizevalue;
 var rf = document.getElementById("RobotoFlex");
 var rfw = document.getElementById("RobotoFlexWeight");
 var rfwslider = document.getElementById("RobotoFlexWeightSlider");
@@ -17,6 +22,9 @@ var rfwislider = document.getElementById("RobotoFlexWidthSlider");
 var rfs = document.getElementById("RobotoFlexSlant");
 var rfsslider = document.getElementById("RobotoFlexSlantSlider");
 var rfsvalue = 0;
+var rfo = document.getElementById("RobotoFlexOptical");
+var rfoslider = document.getElementById("RobotoFlexOpticalSlider");
+var rfovalue = sizevalue;
 var sfpv = document.getElementById("SFProVariable");
 var sfpvw = document.getElementById("SFProVariableWeight");
 var sfpvwslider = document.getElementById("SFProVariableWeightSlider");
@@ -52,8 +60,9 @@ avcwi.innerHTML = avcwislider.value;
 avcs.innerHTML = avcsslider.value;
 
 slider.oninput = function () {
-  output.innerHTML = this.value;
-  root.style.setProperty("--font-preview-size", this.value + "px");
+  var sizevalue = this.value;
+  output.innerHTML = sizevalue;
+  root.style.setProperty("--font-preview-size", sizevalue + "px");
 };
 
 function fontSizeChange(number) {
@@ -78,7 +87,19 @@ function GoogleSansFlexSlantChange(number) {
   var gsfsvalue = number;
   gsfs.innerHTML = gsfsvalue;
   gsfsslider.value = gsfsvalue;
-  gsf.style.fontVariationSettings = "'slnt' " + gsfsvalue;
+  gsf.style.fontVariationSettings =
+    "'slnt' " + gsfsvalue + ", 'opsz' " + gsfovalue;
+}
+
+function GoogleSansFlexOpticalCheckbox() {
+  if (gsfocheck.checked == true) {
+    var gsfovalue = sizevalue;
+    gsfoslider.disabled = true;
+  } else {
+    gsfoslider.disabled = false;
+  }
+  gsf.style.fontVariationSettings =
+    "'slnt' " + gsfsvalue + ", 'opsz' " + gsfovalue;
 }
 
 function RobotoFlexWeightChange(number) {
