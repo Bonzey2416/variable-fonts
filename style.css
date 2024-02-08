@@ -54,6 +54,7 @@
 
 .text-area-preview {
   font-size: var(--font-preview-size);
+  font-variation-settings: "slnt" 0;
 }
 
 .dropdown:hover > .dropdown-menu {
@@ -67,7 +68,9 @@
 
 .dropdown-item {
   font-size: small; /* 13px */
+  font-variation-settings: "slnt" 0;
 }
+
 .dropdown-toggle::after {
   font-size: var(--font-md);
   margin-bottom: -2px;
